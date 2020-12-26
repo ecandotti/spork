@@ -14,12 +14,12 @@ const Help = () => {
     }
 
     return (
-        <div className="w-full px-10 py-10">
-            <div className="my-4 text-center">
-                <span className="font-bold text-4xl">About Us</span>
+        <div className="w-full px-10 py-16">
+            <div className="mb-4 text-center">
+                <span className="font-bold sm:text-4xl text-2xl">About Us</span>
             </div>
             <div className="my-8">
-                <div className="flex flex-col flex-nowrap my-2 px-8 text-gray-900">
+                <div className="flex flex-col flex-nowrap my-2 px-8 text-gray-900 text-sm">
                     <a className="border rounded-xl bg-green-200 hover:bg-green-300 p-3 text-center my-2" href="tel:+33123456789"><FaPhoneAlt className="inline-block"/> + 33 123456789</a>
                     <a className="border rounded-xl bg-green-300 hover:bg-green-400 p-3 text-center my-2" href="mailto:contact@spork.com"><HiMail className="inline-block"/> contact@spork.com</a>
                     <a className="border rounded-xl bg-green-400 hover:bg-green-500 p-3 text-center my-2" href="#"><AiFillRobot className="inline-block"/> Click On Me</a>
