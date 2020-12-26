@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import useChat from '../components/chats/useChat'
+import useChat from '../components/chat/useChat'
 
-import WhichSport from '../components/chats/WhichSport'
+import WhichSport from '../components/chat/WhichSport'
 
 
 const Chat = () => {
-    const [roomId, setRoomId] = useState(0)
+    const [roomId, setRoomId] = useState(null)
     const { messages, sendMessage } = useChat(roomId) // Creates a websocket and manages messaging
     const [newMessage, setNewMessage] = useState("")
 
@@ -15,6 +15,13 @@ const Chat = () => {
         sendMessage(newMessage)
         setNewMessage("")
     }
+
+    const isEnter = (e) => {
+        if (e.key === 'Enter') {
+            console.log('search by EnterKey')
+            handleSendMessage()
+        }
+   }
 
     const showCurrentChat = () => {
         switch (roomId) {
@@ -66,7 +73,7 @@ const Chat = () => {
                             onChange={(e) => setNewMessage(e.target.value)}
                             placeholder="Write your message..."
                             className="rounded-xl p-2 focus:outline-none w-2/3"
-                            />
+                            onKeyPress={isEnter}/>
                         <button onClick={handleSendMessage} className="border bg-blue-400 text-white rounded-xl ml-4 p-2 w-1/3">Send</button>
                     </div>
                 </> 
