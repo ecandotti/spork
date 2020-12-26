@@ -22,6 +22,7 @@ const Default = () => {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/chat" component={Chat} />
+                    <Route exact path="/chat/:roomID" component={Chat} />
                     <Route exact path="/help" component={Help} />
                     <Route path="*" component={() => <Error code="404"/>} />
                 </Switch>
