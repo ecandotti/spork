@@ -1,0 +1,32 @@
+{
+  "name": "spork",
+  "version": "1.0.0",
+  "description": "Sports Community App",
+  "author": "Enzo Candotti <enzo.candotti16@hotmail.com>",
+  "license": "MIT",
+  "main": "src/index.jsx",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "homepage": "https://github.com/ecandotti/spork#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecandotti/spork.git"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-build-script": "^2.0.12",
+    "@snowpack/plugin-react-refresh": "^2.3.9",
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "snowpack": "^2.18.5",
+    "tailwindcss": "^2.0.2"
+  }
+}
