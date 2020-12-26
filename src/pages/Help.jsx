@@ -9,6 +9,13 @@ const Help = () => {
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
 
+    const isEnter = (e) => {
+        if (e.key === 'Enter') {
+            console.log('search by EnterKey')
+            submit()
+        }
+   }
+
     const submit = () => {
         console.log('form sumbit')
     }
@@ -42,7 +49,7 @@ const Help = () => {
                             <textarea type="text" id="message" className="w-full rounded-lg focus:outline-none p-2" value={message} onChange={(e) => setMessage(e.target.value)}/>
                         </div>
                         <div className="text-center">
-                            <button className="flex flex-row flex-nowrap items-center border rounded-xl bg-green-400 hover:bg-green-500 px-4 py-2 text-center my-2" onClick={() => submit}><IoMdSend className="mx-2"/>Send</button>
+                            <button className="flex flex-row flex-nowrap items-center border rounded-xl bg-green-400 hover:bg-green-500 px-4 py-2 text-center my-2" onClick={() => submit} onKeyPress={isEnter}><IoMdSend className="mx-2"/>Send</button>
                         </div>
                     </form>
                 </div>
