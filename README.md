@@ -1,4 +1,4 @@
-# ::rugby_football:: Spork  
+# :rugby_football:Spork  
 
 <strong>Sports Community App in ReactJS</strong>
 
