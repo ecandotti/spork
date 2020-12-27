@@ -4,33 +4,23 @@ import Fuse from 'fuse.js'
 import { useHome } from '../../contexts/useHome'
 
 const Search = () => {
-    // const { allMatch, setAllMatch } = useHome()
-    // const [query, setQuery] = useState('')
-    // const [result, setResult] = useState(null)
-    // const options =  {
-    //     includeScore: true,
+    const { updateSearch } = useHome()
+    const { allTeams, setAllTeams } = useHome()
+    const [query, updateQuery] = useState('')
 
-    //     // keys: [['team', 'sport']]
-    //     keys: ['team.sport']
-    // }
-    // const fuse = new Fuse(allMatch, options)
+    const fuse = new Fuse(allTeams, { includeScore: true, keys: ['name'] })
 
-    // const fetchOnAllMatch = (e) => {
-    //     setQuery(e.target.value)
-    //     setResult(fuse.search(e.target.value))
-    //     console.log(e.target.value, query, result)
-    // }
+    const fetchTeam = (e) => {
+        updateQuery(e.target.value)
+        updateSearch(fuse.search(e.target.value))
+    }
 
 
-    // return (
-    //     <div>
-    //         <input className="rounded-xl focus:outline-none text-center w-full p-1" placeholder="Search match" value={query} onChange={fetchOnAllMatch}/>
-    //         {
-    //             result.console > 0 && "qqch"
-    //         }
-    //     </div>
-    // )
-    return ( "ok" )
+    return (
+        <div>
+            <input className="rounded-xl focus:outline-none text-center w-full p-1 shadow-sm" placeholder="Search team" value={query} onChange={fetchTeam}/>
+        </div>
+    )
 }
 
 export default Search
