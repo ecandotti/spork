@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFootballBall } from 'react-icons/fa'
+import { FaFootballBall, FaUserCircle } from 'react-icons/fa'
 
 const Header = () => {
     const headerStyle ={
@@ -7,8 +7,9 @@ const Header = () => {
     }
 
     return (
-        <div style={headerStyle} className="fixed top-0 left-0 w-full h-12 p-3 text-green-800 header">
-            <span className="flex flex-row flex-nowrap items-center justify-center font-semibold"><FaFootballBall className="mr-2"/>  SPORK</span>
+        <div style={headerStyle} className="flex flex-row flex-nowrap justify-between fixed top-0 left-0 w-full h-12 py-3 text-green-800 header px-8">
+            <span className="flex flex-row flex-nowrap items-center justify-center font-semibold select-none"><FaFootballBall className="mr-2"/>  SPORK</span>
+            <button className="text-2xl cursor-pointer" onClick={() => console.log('logged')}><FaUserCircle /></button>
         </div>
     )
 }
